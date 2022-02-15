@@ -1,0 +1,104 @@
+<%- include('inc/head') %>
+
+<%- include('inc/main') %>
+
+<div class="container mt-5">
+
+    <h3 class="display-4 mb-5">Detalle de Skill</h3>
+
+    <div class="card">
+
+        <div class="card-header">
+            <button class="btn btn-danger" id="btnBorrar" data-id="<%= findRow._id %>"><i class='bx bxs-trash'></i> Borrar Skill</button>
+        </div>
+
+        <form id="formularioEditar" data-id="<%= findRow._id %>">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="nombre">Skill</label>
+                    <input type="text" id="nombre" class="form-control" name="nombre" value="<%= findRow.nombre %>">
+                </div>
+                <div class="form-group">
+                    <label for="nivel">Nivel</label>
+                    <input type="text" id="nivel" class="form-control" name="nivel" value="<%= findRow.nivel %>">
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button class="btn btn-success" type="submit"><i class='bx bx-revision'></i> Actualizar Datos</button>
+                <a href="/" class="btn btn-warning"><i class='bx bxs-x-circle'></i> Cancelar</a>
+            </div>
+        </form>
+
+    </div>
+
+
+</div>
+
+<script>
+
+    document.addEventListener('click', async (e) => {
+
+        if (e.target.matches('#btnBorrar')) {
+            const btnBorrar = document.querySelector("#btnBorrar");
+            // console.log('diste click');
+
+            try {
+                const id = btnBorrar.dataset.id;
+
+                const data = await fetch(`/${id}`, {
+                    method: 'delete'
+                })
+
+                const res = await data.json();
+
+                if (res.estado) {
+                    window.location.href = '/';
+                } else {
+                    console.log(res);
+                }
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+    })
+
+    const formularioEditar = document.querySelector('#formularioEditar');
+
+    formularioEditar.addEventListener('submit', async (e) => {
+
+        e.preventDefault();
+
+        const nombre = formularioEditar.elements['nombre'].value;
+        const nivel = formularioEditar.elements['nivel'].value;
+        const id = formularioEditar.dataset.id;
+
+        try {
+
+            const data = await fetch(`/${id}` , {
+                method: 'put',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({nombre, nivel})
+            })
+
+            const res = await data.json();
+
+            if (res.estado) {
+                window.location.href = '/';
+            }else {
+                console.log(res);
+            }
+            
+        } catch (error) {
+            console.log(error);
+        }
+
+    })
+
+</script>
+
+<%- include('inc/footer') %>

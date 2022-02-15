@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: blue;
+    height: 100vh;
+    font-family: Consolas;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section h1 {
+    font-size: 7rem;
+    color: aliceblue;
+}
+
+section h2{
+    font-size: 4rem;
+    color: aliceblue;
+}
+
+section a{
+    font-size: 2rem;
+    transition: .5s ease;
+    color: antiquewhite;
+}
+
+section a:hover{
+    color: burlywood;
+}
