@@ -5,9 +5,11 @@
 **_Capturas del proyecto real_**
 
 - Página principal:
+
 ![Pagina principal](/detail/cap1.jpeg "Pagina index")
 
 - Página de editar y borrar:
+
 ![Pagina detalle](/detail/cap2.jpeg "Pagina de editar y borrar")
 
 **_Implementaciones del proyecto_**
