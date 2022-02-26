@@ -1,6 +1,6 @@
 # Proyecto _SKILLS_ 
 ### Primer proyecto completo desarrollado en NODE JS, EXPRESS, MONGODB.
-###### Implementando operaciones basicas de un CRUD con interaccion con un usuario final.
+##### Implementando operaciones basicas de un CRUD con interaccion con un usuario final.
 
 **_Capturas del proyecto real_**
 
@@ -8,7 +8,7 @@
 ![Pagina principal](/detail/cap1.jpeg "Pagina index")
 
 - Página de editar y borrar:
-![Pagina detalle](/detail/cap1.jpeg "Pagina de editar y borrar")
+![Pagina detalle](/detail/cap2.jpeg "Pagina de editar y borrar")
 
 **_Implementaciones del proyecto_**
 
